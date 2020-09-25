@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { LoggingService } from '../logging.service';
 import { SharedModule } from '../shared/shared.module';
 
 import { ShoppingEditComponent } from './shopping-edit/shopping-edit.component';
 import { ShoppingListComponent } from './shopping-list.component';
 
 const routes: Routes = [
-  { path : 'shopping-list', component: ShoppingListComponent }
+  { path : '', component: ShoppingListComponent }
 ];
 
 @NgModule({
@@ -20,9 +21,6 @@ const routes: Routes = [
     FormsModule,
     SharedModule
   ],
-  exports: [
-    ShoppingListComponent,
-    ShoppingEditComponent
-  ]
+  providers: [LoggingService]
 })
 export class ShoppingListModule {}
